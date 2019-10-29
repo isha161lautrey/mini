@@ -1,4 +1,9 @@
 {% load static %}
+{% if error %}
+{{ error }}
+</br>
+</br>
+{% endif%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,8 +55,12 @@
                          </div>
                          <div class="form-group">
                            <label for="password">Password:</label>
-                            <input type="password" name="password"  id="password"  class="form-control my-input" placeholder="Enter Password">
+                            <input type="password" name="password1"    class="form-control my-input" placeholder="Enter Password">
                          </div>
+                         <div class="form-group">
+                              <label for="password">Confirm Password:</label>
+                               <input type="password" name="password2"  class="form-control my-input" placeholder="Renter Password">
+                            </div>
                         </form>
                          <form class="" action="{% url 'student_login' %}" method="post">
                               {% csrf_token %}
